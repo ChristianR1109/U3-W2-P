@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Container, Button } from "react-bootstrap";
+import { Container, Button, Card, Col } from "react-bootstrap";
 
 const WeatherDetails = () => {
   const { lat, lon } = useParams();
@@ -33,20 +33,22 @@ const WeatherDetails = () => {
     fetchNextDays();
   }, [lat, lon]);
   return (
-    <Container>
+    <Container className="justify-content-center text-center mt-5">
       {weather && (
-        <div className="mt-3">
-          <h3>Meteo di {weather.name}</h3>
+        <Col xs={12}>
+          <Card>
+            <div className="mt-3">
+              <h3>Meteo di {weather.name}</h3>
+              <h3 className="mt-5">{weather.weather[0].description}</h3>
 
-          <p>Temperatura: {weather.main.temp}</p>
-        </div>
+              <h2 className="mt-5">Temperatura: {weather.main.temp}</h2>
+            </div>
+          </Card>
+        </Col>
       )}
       {nextDays && (
         <div className="mt-4">
           <h4>Previsioni per i prossimi 5 giorni</h4>
-          {/* {nextDays.map(([]) => (
-          
-          ))} */}
         </div>
       )}
     </Container>
