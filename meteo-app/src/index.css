@@ -15,3 +15,42 @@ body {
   background: linear-gradient(134deg, rgba(255, 255, 255, 1) 0%, rgba(2, 2, 2, 1) 0%, rgba(55, 55, 55, 0.8) 100%);
   color: white;
 }
+.small-cards {
+  background: none;
+}
+.ifs-xs {
+  font-size: 3rem;
+}
+@media (min-width: 576px) {
+  .ifs-sm {
+    font-size: 4rem;
+  }
+}
+@media (min-width: 768px) {
+  .ifs-md {
+    font-size: 5rem;
+  }
+}
+@media (min-width: 992px) {
+  .ifs-lg {
+    font-size: 6rem;
+  }
+}
+.tfs-xs {
+  font-size: 1rem;
+}
+@media (min-width: 576px) {
+  .tfs-sm {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .tfs-md {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 992px) {
+  .tfs-lg {
+    font-size: 3rem;
+  }
+}

@@ -26,7 +26,7 @@ const Home = () => {
       <Form onSubmit={fetchCities}>
         <Form.Label htmlFor="inputCity"></Form.Label>
         <Form.Control type="text" id="inputCity" value={city} onChange={(e) => setCity(e.target.value)} placeholder="City Name" required />
-        <Button variant="secondary" type="submit" className="mt-3">
+        <Button variant="secondary" type="submit" className="mt-4 tfs-xs tfs-sm tfs-md ">
           Search
         </Button>
       </Form>
@@ -35,9 +35,12 @@ const Home = () => {
         <Row>
           {citiesList.map((city, index) => (
             <Col xs={6} className="g-4">
-              <Card>
+              <Card className="h-100">
                 <ListGroup.Item key={index} style={{ cursor: "pointer" }} onClick={() => navigate(`/weatherdetails/${city.lat}/${city.lon}`)}>
-                  {city.name}, {city.country}
+                  <p className="tfs-xs tfs-sm tfs-md tfs-lg mb-0">
+                    {city.name},{city.country}
+                  </p>
+                  <p className="tfs-xs tfs-sm tfs-md tfs-lg mb-0">{city.state}</p>
                 </ListGroup.Item>
               </Card>
             </Col>
